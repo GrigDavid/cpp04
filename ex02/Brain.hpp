@@ -8,8 +8,10 @@ class Brain{
 		Brain();
 		Brain(const Brain& other);
 		Brain& operator=(const Brain& other);
-		virtual ~Brain();
-	protected:
+		~Brain();
+		void setIdea(int index, const std::string& idea);
+		std::string getIdea(int index) const;
+	private:
 		std::string _ideas[100];
 };
 

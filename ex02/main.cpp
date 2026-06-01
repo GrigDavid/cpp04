@@ -1,35 +1,20 @@
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include <iostream>
 
 int main()
 {
-	Cat cats[5];
-	Dog dogs[5];
-	for (int i = 0; i < 10; i++)
-	{
-		if (i < 5)
-		{
-			dogs[i] = Dog();
-		}
-		else
-		{
-			cats[i - 5] = Cat();
-		}
-	}
-	for (int i = 0; i < 10; i++)
-	{
-		if (i < 5)
-		{
-			dogs[i].makeSound();
-		}
-		else
-		{
-			cats[i - 5].makeSound();
-		}
-	}
-	const Dog* j = new Dog();
-	const Cat* i = new Cat();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	i->makeSound();
+	j->makeSound();
 	delete j;
 	delete i;
+	Dog a;
+	Dog b;
+	a.setIdea(0, "Foooood");
+	b.setIdea(0, "CAAT");
+	a = b;
+	std::cout << a.getIdea(0) <<std::endl;
 	return (0);
 }
