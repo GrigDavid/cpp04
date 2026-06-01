@@ -1,14 +1,14 @@
 #include "Animal.hpp"
 
-Animal::Animal() : _type("unspecified")
+Animal::Animal() : type("unspecified")
 {
 }
 
-Animal::Animal(const std::string& type) : _type(type)
+Animal::Animal(const std::string& type) : type(type)
 {
 }
 
-Animal::Animal(const Animal& other) : _type(other._type)
+Animal::Animal(const Animal& other) : type(other.type)
 {
 }
 
@@ -19,6 +19,6 @@ Animal& Animal::operator=(const Animal& other)
 {
 	if (this == &other)
 		return (*this);
-	_type = other._type;
+	type = other.type;
 	return (*this);
 }

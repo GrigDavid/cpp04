@@ -1,27 +1,33 @@
 #include "Animal.hpp"
+#include <iostream>
 
-Animal::Animal() : _type("unspecified")
+Animal::Animal() : type("")
 {
+	std::cout << "Animal was created" << std::endl;
 }
 
-Animal::Animal(const std::string& type) : _type(type)
+Animal::Animal(const Animal& other) : type(other.type)
 {
-}
-
-Animal::Animal(const Animal& other) : _type(other._type)
-{
+	std::cout << "Animal " << type << " was created" << std::endl;
 }
 
 Animal::~Animal()
-{}
+{
+	if (type.empty())
+		std::cout << "Animal was destroyed" << std::endl;
+	else
+		std::cout << "Animal " << type << " was destroyed" << std::endl;
+}
 
 Animal& Animal::operator=(const Animal& other)
 {
 	if (this == &other)
 		return (*this);
-	_type = other._type;
+	type = other.type;
 	return (*this);
 }
 
-void	Animal::makeSound()
-{}
+void	Animal::makeSound() const
+{
+	std::cout << "Some animal noises" << std::endl;
+}

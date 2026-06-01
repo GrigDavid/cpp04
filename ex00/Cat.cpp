@@ -1,27 +1,29 @@
 #include "Cat.hpp"
 #include <iostream>
 
-Cat::Cat() : Animal("Cat")
+Cat::Cat() : Animal()
 {
+	type = "Cat";
+	std::cout << "Cat was created" << std::endl;
 }
 
-Cat::Cat(const Cat& other) : Animal("Cat")
+Cat::Cat(const Cat& other) : Animal(other)
 {
+	std::cout << "Cat was created" << std::endl;
 }
 
 Cat& Cat::operator=(const Cat& other)
 {
-	if (this == &other)
-		return (*this);
-	_type = other._type;
+	Animal::operator=(other);
 	return (*this);
 }
 
 Cat::~Cat()
 {
+	std::cout << "Cat was destroyed:(" << std::endl;
 }
 
-void Cat::makeSound()
+void Cat::makeSound() const
 {
 	std::cout << "Meow!" << std::endl;
 }

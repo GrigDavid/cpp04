@@ -1,6 +1,6 @@
 #include "Brain.hpp"
 
-Brain::Brain()
+Brain::Brain() : _ideas()
 {}
 
 Brain::Brain(const Brain& other)
