@@ -7,9 +7,8 @@ Dog::Dog() : Animal(), _brain(new Brain())
 	std::cout << "Dog was created" << std::endl;
 }
 
-Dog::Dog(const Dog& other) : Animal(), _brain(new Brain(*(other._brain)))
+Dog::Dog(const Dog& other) : Animal(other), _brain(new Brain(*(other._brain)))
 {
-	type = "Dog";
 	std::cout << "Dog was created" << std::endl;
 }
 
@@ -24,8 +23,8 @@ Dog& Dog::operator=(const Dog& other)
 
 Dog::~Dog()
 {
-	std::cout << "Dog was destroyed:(" << std::endl;
 	delete _brain;
+	std::cout << "Dog was destroyed:(" << std::endl;
 }
 
 void Dog::makeSound() const
@@ -33,11 +32,11 @@ void Dog::makeSound() const
 	std::cout << "Haf!" << std::endl;
 }
 
-
 void Dog::setIdea(int index, const std::string& idea)
 {
 	_brain->setIdea(index, idea);
 }
+
 std::string Dog::getIdea(int index) const
 {
 	return (_brain->getIdea(index));

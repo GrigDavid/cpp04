@@ -2,8 +2,7 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = Brain.cpp Animal.cpp Cat.cpp Dog.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
-NAME = Brain
-
+NAME = Abstract
 
 all: $(NAME)
 
